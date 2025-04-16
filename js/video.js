@@ -79,11 +79,20 @@ theZoomies.addEventListener("click", function(){
 	console.log("Current location is", vid.currentTime)
 })
 
-let oldBoi = document.getElementById("vintage")
+let boomer = document.getElementById("vintage")
 
-oldBoi.addEventListener("click", function(){
-	var element = video.querySelector('vintage');
-	element.className += ' oldSchool';
+boomer.addEventListener("click", function(){
+    cssPath ="css/video.css"
+    vid.setAttribute("class", "oldSchool");
+})
+
+let doomer = document.getElementById("orig")
+
+doomer.addEventListener("click", function(){
+    cssPath ="css/video.css"
+
+    vid.setAttribute("class", "video");
+
 })
 
 
