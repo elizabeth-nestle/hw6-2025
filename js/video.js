@@ -19,14 +19,14 @@ vid.autoplay = false;
 vid.loop = false;
 // });
 
-let playB = document.getElementById("play");
-let currVolume = document.getElementById("slider").value;
+// let playB = document.getElementById("play");
+// let currVolume = document.getElementById("slider").value;
 
-playB.addEventListener("click", function () {
-	vid.play();
-	vid.volume = currVolume / 200;
+// playB.addEventListener("click", function () {
+// 	vid.play();
+// 	vid.volume = currVolume / 200;
 	
-});
+// });
 
 let pauseB = document.getElementById("pause");
 
@@ -62,12 +62,21 @@ let vol = document.getElementById("slider")
 let shutUp = document.getElementById("mute")
 
 shutUp.addEventListener("click", function(){
-	if (vid.muted == true){
-		vid.muted = false
-	}
-	else if (vid.muted == false){
-		vid.muted = true
-	}})
+    if (vid.muted == true){
+        vid.muted = false
+        shutUp.innerHTML = "Mute"
+        shutUp.innerText = "Mute"
+
+    }
+    else if (vid.muted == false){
+        vid.muted = true
+        shutUp.innerHTML = "Unmute"
+        shutUp.innerText = "Unmute"
+
+    }
+    // vid.muted = true
+
+})
 
 let theZoomies = document.getElementById("skip")
 
@@ -104,7 +113,16 @@ var output = document.getElementById("volume");
 output.innerHTML = slider.value;
 
 slider.oninput = function() {
-  output.innerHTML = this.value;
+  output.innerHTML = this.value + "%";
 } 
 // End code from W3Schools //
 
+
+let playB = document.getElementById("play");
+// let currVolume = document.getElementById("slider").value;
+
+playB.addEventListener("click", function () {
+    vid.play();
+    vid.volume = slider.value / 100;
+
+});
