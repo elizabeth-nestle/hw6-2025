@@ -113,7 +113,7 @@ var output = document.getElementById("volume");
 output.innerHTML = slider.value + "%";
 
 slider.oninput = function() {
-  output.innerHTML = this.value + "%";
+//   output.innerHTML = this.value + "%";
 } 
 // End code from W3Schools //
 
@@ -124,5 +124,6 @@ let playB = document.getElementById("play");
 playB.addEventListener("click", function () {
     vid.play();
     vid.volume = slider.value / 100;
+	output.innerHTML = slider.value + "%";
 
 });
